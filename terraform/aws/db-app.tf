@@ -172,6 +172,7 @@ resource "aws_iam_role" "ec2role" {
   path = "/"
 
   assume_role_policy = <<EOF
+  # Drata: Explicitly define resources for [aws_iam_role.inline_policy.policy] in adherence with the principal of least privilege. Avoid the use of overly permissive allow-all access patterns such as ([*])
 {
     "Version": "2012-10-17",
     "Statement": [
