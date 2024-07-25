@@ -1,4 +1,5 @@
 resource "aws_s3_bucket" "data" {
+  # Drata: Set [aws_s3_bucket_versioning.versioning_configuration.status] to Enabled to enable infrastructure versioning and prevent accidental deletions and overrides
   # bucket is public
   # bucket is not encrypted
   # bucket does not have access logs
@@ -40,6 +41,7 @@ resource "aws_s3_bucket_object" "data_object" {
 }
 
 resource "aws_s3_bucket" "financials" {
+  # Drata: Set [aws_s3_bucket_versioning.versioning_configuration.status] to Enabled to enable infrastructure versioning and prevent accidental deletions and overrides
   # bucket is not encrypted
   # bucket does not have access logs
   # bucket does not have versioning
@@ -63,6 +65,7 @@ resource "aws_s3_bucket" "financials" {
 }
 
 resource "aws_s3_bucket" "operations" {
+  # Drata: Set [aws_s3_bucket_versioning.versioning_configuration.status] to Enabled to enable infrastructure versioning and prevent accidental deletions and overrides
   # bucket is not encrypted
   # bucket does not have access logs
   bucket = "${local.resource_prefix.value}-operations"
@@ -87,6 +90,7 @@ resource "aws_s3_bucket" "operations" {
 }
 
 resource "aws_s3_bucket" "data_science" {
+  # Drata: Set [aws_s3_bucket_versioning.versioning_configuration.status] to Enabled to enable infrastructure versioning and prevent accidental deletions and overrides
   # bucket is not encrypted
   bucket = "${local.resource_prefix.value}-data-science"
   acl    = "private"
