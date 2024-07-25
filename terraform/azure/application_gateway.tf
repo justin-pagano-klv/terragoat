@@ -35,7 +35,7 @@ resource "azurerm_application_gateway" "network" {
     cookie_based_affinity = "Disabled"
     path                  = "/path1/"
     port                  = 80
-    protocol              = "Http"
+    protocol              = "https"
     request_timeout       = 60
   }
 
@@ -43,7 +43,7 @@ resource "azurerm_application_gateway" "network" {
     name                           = local.listener_name
     frontend_ip_configuration_name = local.frontend_ip_configuration_name
     frontend_port_name             = local.frontend_port_name
-    protocol                       = "Http"
+    protocol                       = "Https"
   }
 
   request_routing_rule {

@@ -1,11 +1,12 @@
 resource "aws_elasticsearch_domain" "monitoring-framework" {
+  # Drata: Set [aws_elasticsearch_domain.domain_endpoint_options.enforce_https] to true to ensure secure protocols are being used to encrypt resource traffic
   domain_name           = "tg-${var.environment}-es"
   elasticsearch_version = "2.3"
 
   cluster_config {
     instance_type            = "t2.small.elasticsearch"
     instance_count           = 1
-    dedicated_master_enabled = false
+    dedicated_master_enabled = true
     dedicated_master_type    = "m4.large.elasticsearch"
     dedicated_master_count   = 1
   }
